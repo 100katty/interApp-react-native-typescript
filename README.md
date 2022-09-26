@@ -1,0 +1,1 @@
+# interApp-react-native-typescript
