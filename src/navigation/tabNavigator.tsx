@@ -1,6 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import { FilterScreen } from "../screens/filterScreen";
 import { PokemonsScreen } from "../screens/pokemonsScreens";
 import { ListScreen } from "../screens/listScreen";
@@ -21,7 +22,7 @@ export const TapNavigation = () => {
                     ? "ios-search-circle-sharp"
                     : "ios-search-circle-outline"
                 }
-                size={size}
+                size={35}
                 color={color}
               />
             );
@@ -31,7 +32,7 @@ export const TapNavigation = () => {
                 name={
                   focused ? "ios-list-circle-sharp" : "ios-list-circle-outline"
                 }
-                size={size}
+                size={35}
                 color={color}
               />
             );
@@ -39,7 +40,7 @@ export const TapNavigation = () => {
             return (
               <MaterialCommunityIcons
                 name={"pokemon-go"}
-                size={size}
+                size={35}
                 color={color}
               />
             );
@@ -47,13 +48,14 @@ export const TapNavigation = () => {
         },
         tabBarInactiveTintColor: colores.InactiveTintColor,
         tabBarActiveTintColor: colores.ActiveTintColor,
+        headerShown: false,
       })}
     >
       <Tab.Screen
         name="Filter"
         component={FilterScreen}
         options={{
-          title: "Busca tu pokemon",
+          title: "Buscar",
           headerStyle: {
             backgroundColor: colores.primary,
           },
@@ -64,7 +66,7 @@ export const TapNavigation = () => {
         name="List"
         component={ListScreen}
         options={{
-          title: "Lista de pokemons",
+          title: "Lista",
           headerStyle: {
             backgroundColor: colores.primary,
           },
@@ -75,7 +77,7 @@ export const TapNavigation = () => {
         name="Pokemons"
         component={PokemonsScreen}
         options={{
-          title: "Pokemons buscados",
+          title: "Pokemons",
           headerStyle: {
             backgroundColor: colores.primary,
           },

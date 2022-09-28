@@ -7,18 +7,21 @@ import {
   FlatList,
   ActivityIndicator,
 } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { PokemonCard } from "../components/PokemonCard";
 import { usePokemonInfitiScroll } from "../hooks/usePokemonInfitiScroll";
 import { styles } from "../theme/appTheme";
 
 // create a component
 export const ListScreen = () => {
+  const { top } = useSafeAreaInsets();
   const { simplePokemonList, loadPokemons } = usePokemonInfitiScroll();
 
   return (
     <>
       <View style={{ flex: 1, margin: 5, alignItems: "center" }}>
         <FlatList
+          style={{ marginTop: 50 }}
           data={simplePokemonList}
           keyExtractor={(pokemon) => pokemon.id}
           showsVerticalScrollIndicator={false}
