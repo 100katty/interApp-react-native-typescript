@@ -16,6 +16,7 @@ export const FilterScreen = () => {
   const [pokemonFilteredReduce, setPokemonFilteredReduce] = useState<
     SimplePokemon[]
   >([]);
+
   const [term, setTerm] = useState("");
 
   useEffect(() => {

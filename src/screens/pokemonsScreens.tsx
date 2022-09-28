@@ -1,13 +1,23 @@
 //import liraries
-import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React, { Component, useContext } from "react";
+import { View, Text, StyleSheet, FlatList } from "react-native";
+import { PokemonCard } from "../components/PokemonCard";
+import { PokemonContext } from "../context/PokemonContext";
 import { styles } from "../theme/appTheme";
 
-// create a component
 export const PokemonsScreen = () => {
+  const pokemons = useContext(PokemonContext);
   return (
     <View style={styles.containerScreen}>
-      <Text>PokemonsScreen</Text>
+      {/*
+      <FlatList
+        data={pokemons}
+        renderItem={({ item }) => (
+          < PokemonCard pokemon={item} />
+        )}
+        keyExtractor={(item) => item.id}
+      />
+      */}
     </View>
   );
 };
